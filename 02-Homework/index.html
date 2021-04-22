@@ -11,6 +11,10 @@
         crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css"/>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
     <title>Weather Bashboard</title>
 </head>
 <body>
@@ -29,15 +33,15 @@
             <div class="col-3 bg-light py-1">
                 <h5 class="text-dark mb-1">Search for a City:</h5>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control rounded">
-                    <button class="btn bg-primary bi bi-search rounded" type="button">
+                    <input type="text" class="form-control rounded" value="" >
+                    <button class="btn bg-primary bi bi-search rounded" type="button" id="search-btn">
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                         </svg>
                     </button>
                 </div>
-                <table class="table table-bordered table-hover bg-white text-secondary">
+                <table class="table table-bordered table-hover bg-white text-secondary" id='searched-table'>
                     <tbody>
                         <tr>
                             <td scope="col">Austin</td>
@@ -46,26 +50,21 @@
                             <td scope="col">Chicago</td>
                         </tr>
                         <tr>
-                            <td scope="col">Austin</td>
-                        </tr>
-                        <tr>
-                            <td scope="col">Austin</td>
-                        </tr>
-                        <tr>
-                            <td scope="col">Austin</td>
-                        </tr>
-                        <tr>
-                            <td scope="col">Austin</td>
-                        </tr>
-                        <tr>
-                            <td scope="col">Austin</td>
-                        </tr>
-                        <tr>
-                            <td scope="col">Austin</td>
+                            <td scope="col">Dallas</td>
                         </tr>
                         <tr>
                             <td scope="col">New York</td>
                         </tr>
+                        <tr>
+                            <td scope="col">Denver</td>
+                        </tr>
+                        <tr>
+                            <td scope="col">Tokyo</td>
+                        </tr>
+                        <tr>
+                            <td scope="col">San Antonio</td>
+                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
@@ -76,11 +75,12 @@
                 <!--Current City card-->
                 <div class="row">
                     <div class="container border p-3 rounded">
-                        <h2>Atlanta</h2>
-                        <p>Temperature:</p>
-                        <p>Humidity:</p>
-                        <p>Wind Speed:</p>
-                        <p>UV Index:</p>
+                        <h2 id="searched-city">City Name</h2>
+                        <img id="wicon" src="" alt="Weather icon">
+                        <p id="current-temp">Temperature:</p>
+                        <p id="current-humidity">Humidity:</p>
+                        <p id="current-wind">Wind Speed:</p>
+                        <div class="bg-primary text-light rounded" id="current-uv">UV Index:</div>
                     </div>
                 </div>
 
@@ -88,29 +88,34 @@
                 <div class="row mt-3">
                     <h2 class="">5-Day Forecast:</h2>
                     <div class="col bg-primary text-white me-3 p-2 rounded">
-                        <p>4/12/21</p>
-                        <p>Temp:</p>
-                        <p>Humidity:</p>
+                        <p id="day1-date">4/12/21</p>
+                        <img id="day1-icon" src="" alt="Weather icon">
+                        <p id="day1-temp">Temp:</p>
+                        <p id="day1-humidity">Humidity:</p>
                     </div>
                     <div class="col bg-primary text-white me-3 p-2 rounded">
-                        <p>4/12/21</p>
-                        <p>Temp:</p>
-                        <p>Humidity:</p>
+                        <p id="day2-date">4/12/21</p>
+                        <img id="day2-icon" src="" alt="Weather icon">
+                        <p id="day2-temp">Temp:</p>
+                        <p id="day2-humidity">Humidity:</p>
                     </div>
                     <div class="col bg-primary text-white me-3 p-2 rounded">
-                        <p>4/12/21</p>
-                        <p>Temp:</p>
-                        <p>Humidity:</p>
+                        <p id="day3-date">4/12/21</p>
+                        <img id="day3-icon" src="" alt="Weather icon">
+                        <p id="day3-temp">Temp:</p>
+                        <p id="day3-humidity">Humidity:</p>
                     </div>
                     <div class="col bg-primary text-white me-3 p-2 rounded">
-                        <p>4/12/21</p>
-                        <p>Temp:</p>
-                        <p>Humidity:</p>
+                        <p id="day4-date">4/12/21</p>
+                        <img id="day4-icon" src="" alt="Weather icon">
+                        <p id="day4-temp">Temp:</p>
+                        <p id="day4-humidity">Humidity:</p>
                     </div>
                     <div class="col bg-primary text-white me-3 p-2 rounded">
-                        <p>4/12/21</p>
-                        <p>Temp:</p>
-                        <p>Humidity:</p>
+                        <p id="day5-date">4/12/21</p>
+                        <img id="day5-icon" src="" alt="Weather icon">
+                        <p id="day5-temp">Temp:</p>
+                        <p id="day5-humidity">Humidity:</p>
                     </div>
                 </div>
 
